@@ -1,5 +1,5 @@
 {
-    "name": "codingmatters/mot-reports",
+    "name": "megamitch/mot-reports",
     "description": "Reporting module for Mega Mitch Credit, Inc. Office Tool (MegaOfficeTool) Platform",
     "license": "MIT",
     "type": "application",
@@ -9,7 +9,7 @@
         "reports",
         "zf2"
     ],
-    "homepage": "https://github.com/CodingMatters/MOT_Reports/",
+    "homepage": "http://megamitch.ph",
     "authors": [
         {
             "name": "Gab Amba",
