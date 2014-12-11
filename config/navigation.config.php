@@ -26,9 +26,12 @@
 
 return [
     'navigation' => [
+        'default' => [
+            
+        ],
         'sidebar' => [
             "reporting" => [
-                "label" => "Reporting",
+                "label" => "View Reporting",
                 "route" =>  "#",
                 "icon" => "fa fa-line-chart",
                 "pages" => [
