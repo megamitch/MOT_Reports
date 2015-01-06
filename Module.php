@@ -28,7 +28,7 @@ namespace MotReports;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
-use Zend\ModuleManager\ModuleManager;
+use Zend\ModuleManager\Feature\ViewHelperProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ControllerProviderInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
@@ -38,16 +38,14 @@ class Module implements
     AutoloaderProviderInterface,
     ServiceProviderInterface,    
     ConfigProviderInterface,
-    ControllerProviderInterface
+    ControllerProviderInterface,
+    ViewHelperProviderInterface
 {
     public function onBootstrap(MvcEvent $event)
     {
         $eventManager        = $event->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
-        
-//        $serviceManager = $event->getApplication()->getServiceManager();
-//        $eventManager->attach($serviceManager->get('ZfcRbac\View\Strategy\RedirectStrategy'));
     }
 
     public function getConfig()
@@ -85,5 +83,10 @@ class Module implements
     public function getServiceConfig()
     {
         return include __DIR__ . '/config/services.config.php';
+    }
+    
+    public function getViewHelperConfig()
+    {
+        return include __DIR__ . '/config/view.helpers.config.php';
     }
 }
