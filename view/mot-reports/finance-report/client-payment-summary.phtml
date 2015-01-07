@@ -1,3 +1,19 @@
+<?php
+    $this->headLink()->prependStylesheet($this->basePath() . '/assets/datatables/media/css/jquery.dataTables_themeroller.css')
+            ->prependStylesheet($this->basePath() . '/assets/datatables/extras/TableTools/media/css/TableTools.css')
+            ->prependStylesheet($this->basePath() . '/assets/datatables/media/css/jquery.dataTables.min.css')
+            ->prependStylesheet($this->basePath() . '/assets/jquery-ui/themes/humanity/theme.css')
+            ->prependStylesheet($this->basePath() . '/assets/jquery-ui/themes/humanity/jquery-ui.min.css');
+    
+    
+    $this->inlineScript()
+            ->prependFile($this->basePath('assets/mot-reports/js/datatable.js'))
+            ->prependFile($this->basePath('assets/datatables/extras/TableTools/media/js/TableTools.js'))
+            ->prependFile($this->basePath('assets/datatables/extras/TableTools/media/js/ZeroClipboard.js'))
+            ->prependFile($this->basePath('assets/datatables/media/js/jquery.dataTables.min.js'))
+            ->prependFile($this->basePath('assets/jquery-ui/jquery-ui.min.js'));
+?>
+
 <div class="pageheader">
      <div class="media">
          <div class="pageicon pull-left">
@@ -18,6 +34,8 @@
 </div>
 <div class="contentpanel">
     <div class="row">
-        <h1></h1> 
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <?php echo $this->DataTables($this->result['name'], $this->result['header'], $this->result['data']); ?>
+        </div>
     </div>
 </div>

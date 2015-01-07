@@ -90,12 +90,40 @@ class SalesReportController extends AbstractActionController
     
     public function clientTotalDueAction()
     {
+        $totalDue = [
+            'name' => 'datatables5',
+            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g'],
+            'data'  => [
+                ['1','2', '3', '4', '5', '6', '7'],
+                ['1','2', '3', '4', '5', '6', '7'],
+                ['1','2', '3', '4', '5', '6', '7']
+            ]
+        ];
         
+        return new ViewModel(['result' => $totalDue]);
     }
     
     public function insuranceFeeAction()
     {
+        $insuranceFee = [
+            'name' => 'datatables6',
+             'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],
+            'data'  => [
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0']
+            ]
+        ];
         
+        return new ViewModel(['result' => $insuranceFee]);
     }
     
     public function creditOfficerSalesKpiACtion()
