@@ -9,6 +9,7 @@
 namespace MotReports\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\View\Model\ViewModel;
 
 /**
  * MotReports\Controller\ManagementReportController
@@ -19,7 +20,17 @@ class ManagementReportController extends AbstractActionController
 {
     public function mambuCommentsAction()
     {
+        $totalDue = [
+            'name' => 'datatables5',
+            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g'],
+            'data'  => [
+                ['1','2', '3', '4', '5', '6', '7'],
+                ['1','2', '3', '4', '5', '6', '7'],
+                ['1','2', '3', '4', '5', '6', '7']
+            ]
+        ];
         
+        return new ViewModel(['result' => $totalDue]);
     }
     
     public function paymentTransactionAction()
