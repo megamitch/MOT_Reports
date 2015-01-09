@@ -93,21 +93,21 @@ return [
                         'route' => "mot/reports/payment-transaction",
                         'icon' => "fa fa-line-chart"
                     ],
-                    "employee-personal-loan" => [
-                        'label' => "Employee Personal Loan",
-                        'route' => "mot/reports/employee-personal-loan",
-                        'icon' => "fa fa-line-chart"
-                    ],
-                    "fraudulent-account" => [
-                        'label' => "Fraudulent Account",
-                        'route' => "mot/reports/fraudulent-account",
-                        'icon' => "fa fa-line-chart"
-                    ],
-                    "employee-as-guarantor" => [
-                        'label' => "Employee as Guarantor",
-                        'route' => "mot/reports/employee-as-guarantor",
-                        'icon' => "fa fa-line-chart"
-                    ],
+//                    "employee-personal-loan" => [
+//                        'label' => "Employee Personal Loan",
+//                        'route' => "mot/reports/employee-personal-loan",
+//                        'icon' => "fa fa-line-chart"
+//                    ],
+//                    "fraudulent-account" => [
+//                        'label' => "Fraudulent Account",
+//                        'route' => "mot/reports/fraudulent-account",
+//                        'icon' => "fa fa-line-chart"
+//                    ],
+//                    "employee-as-guarantor" => [
+//                        'label' => "Employee as Guarantor",
+//                        'route' => "mot/reports/employee-as-guarantor",
+//                        'icon' => "fa fa-line-chart"
+//                    ],
                     "company-kpi" => [
                         'label' => "Business/Company KPI",
                         'route' => "mot/reports/company-kpi",
