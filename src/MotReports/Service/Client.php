@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2012-2014, contributors of Mega Mitch Credit, Inc. software project.
+ * Copyright (c) 2012-2015, contributors of Mega Mitch Credit, Inc. software project.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,20 +24,14 @@
  * THE SOFTWARE.
  */
 
-return [
-    'abstract_factories' => [
-        
-    ],
-    'factories' => [
-        'CreditOfficer' => 'MotReports\Factory\Controller\Plugin\CreditOfficer',
-        'Client' => 'MotReports\Factory\Controller\Plugin\Client',
-        'Teller' => 'MotReports\Factory\Controller\Plugin\Teller',
-    ],
-    'invokables' => [
-        
-    ],
-    'alias' => [
-        
-    ]
+namespace MotReports\Service;
+
+/**
+ * MotReports\Service\Client
+ * 
+ * @package MotReports\Service
+ */
+class Client
+{
     
-];
+}

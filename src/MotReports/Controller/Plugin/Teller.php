@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2012-2014, contributors of Mega Mitch Credit, Inc. software project.
+ * Copyright (c) 2012-2015, contributors of Mega Mitch Credit, Inc. software project.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,20 +24,29 @@
  * THE SOFTWARE.
  */
 
-return [
-    'abstract_factories' => [
-        
-    ],
-    'factories' => [
-        'CreditOfficer' => 'MotReports\Factory\Controller\Plugin\CreditOfficer',
-        'Client' => 'MotReports\Factory\Controller\Plugin\Client',
-        'Teller' => 'MotReports\Factory\Controller\Plugin\Teller',
-    ],
-    'invokables' => [
-        
-    ],
-    'alias' => [
-        
-    ]
-    
-];
+namespace MotReports\Controller\Plugin;
+
+use Zend\Mvc\Controller\Plugin\AbstractPlugin;
+
+/**
+ * MotReports\Controller\Plugin\Teller
+ * 
+ * @package MotReports\Controller\Plugin
+ */
+class Teller extends AbstractPlugin
+{
+    public function getAllTransactions()
+    {
+        return [
+            'title' => strtoupper('clients in arrears'),
+            'name' => 'datatables2',
+            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'],
+            'data'  => [
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13']
+            ]
+        ];
+    }
+}
