@@ -24,19 +24,14 @@
  * THE SOFTWARE.
  */
 
-namespace MotReports\View\Helper\CreditOfficer;
-
-use Zend\View\Helper\AbstractHelper;
+namespace MotReports\Service;
 
 /**
- * MotReports\View\Helper\CreditOfficer\Status
+ * MotReports\Service\Teller
  * 
- * @package MotReports\View\Helper\CreditOfficer
+ * @package MotReports\Service
  */
-class Status extends AbstractHelper
+class Teller
 {
-    public function __invoke()
-    {
-        return "";
-    }
+    
 }

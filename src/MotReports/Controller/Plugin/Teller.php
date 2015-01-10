@@ -24,19 +24,29 @@
  * THE SOFTWARE.
  */
 
-namespace MotReports\View\Helper\CreditOfficer;
+namespace MotReports\Controller\Plugin;
 
-use Zend\View\Helper\AbstractHelper;
+use Zend\Mvc\Controller\Plugin\AbstractPlugin;
 
 /**
- * MotReports\View\Helper\CreditOfficer\Status
+ * MotReports\Controller\Plugin\Teller
  * 
- * @package MotReports\View\Helper\CreditOfficer
+ * @package MotReports\Controller\Plugin
  */
-class Status extends AbstractHelper
+class Teller extends AbstractPlugin
 {
-    public function __invoke()
+    public function getAllTransactions()
     {
-        return "";
+        return [
+            'title' => strtoupper('clients in arrears'),
+            'name' => 'datatables2',
+            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'],
+            'data'  => [
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
+                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13']
+            ]
+        ];
     }
 }

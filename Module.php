@@ -33,12 +33,14 @@ use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ControllerProviderInterface;
 use Zend\ModuleManager\Feature\ServiceProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
+use Zend\ModuleManager\Feature\ControllerPluginProviderInterface;
 
 class Module implements 
     AutoloaderProviderInterface,
     ServiceProviderInterface,    
     ConfigProviderInterface,
     ControllerProviderInterface,
+    ControllerPluginProviderInterface,
     ViewHelperProviderInterface
 {
     public function onBootstrap(MvcEvent $event)
@@ -78,6 +80,11 @@ class Module implements
     public function getControllerConfig()
     {
         return include __DIR__ . '/config/controllers.config.php';
+    }
+    
+    public function getControllerPluginConfig()
+    {
+        return include __DIR__ . '/config/controllers.plugin.config.php';
     }
     
     public function getServiceConfig()

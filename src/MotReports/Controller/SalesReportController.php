@@ -18,72 +18,28 @@ use Zend\View\Model\ViewModel;
  */
 class SalesReportController extends AbstractActionController
 {
+    /**
+     * Preview the current Client status of a Credit Officer
+     * 
+     * 1. Identify Credit Officer
+     * 2. Get Client information summary
+     * 3. Breakdown client information on a table per following:
+     *      a. in Grace Period
+     *      b. in Arrears
+     *      c. Active/Good Standing Clients
+     *      d. Future Clients
+     * 
+     * @return ViewModel
+     */
     public function creditOfficerStatusAction()
     {
-        $clientInGrace = [
-            'title' => strtoupper('clients in grace period'),
-            'name' => 'datatables1',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0']
-            ]
-        ];
-        
-        $clientInArrears = [
-            'title' => strtoupper('clients in arrears'),
-            'name' => 'datatables2',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13']
-            ]
-        ];
-        
-        $activeClients = [
-            'title' => strtoupper('active/good standing clients'),
-            'name' => 'datatables3',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8','9'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9']
-            ]
-        ];
-        
-        $futureClients = [
-            'title' => strtoupper('future clients'),
-            'name' => 'datatables4',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8'],
-                ['1','2', '3', '4', '5', '6', '7', '8'],
-                ['1','2', '3', '4', '5', '6', '7', '8']
-            ]
-        ];
+        if ($this->CreditOfficer()->hasIdentity('Iligan', 'Name'))
+        {
+            $clientInGrace = $this->CreditOfficer()->getClientsInGracePeriod();
+            $clientInArrears = $this->CreditOfficer()->getClientsInArrears();
+            $activeClients = $this->CreditOfficer()->getGoodStandingClients();
+            $futureClients = $this->CreditOfficer()->getFutureClients();
+        }
         
         return new ViewModel(['result' => [$clientInGrace, $clientInArrears, $activeClients, $futureClients]]);
     }

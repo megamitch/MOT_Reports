@@ -20,17 +20,7 @@ class FinanceReportController extends AbstractActionController
 {
     public function clientPaymentSummaryAction()
     {
-        $payment = [
-            'title' => strtoupper('clients in arrears'),
-            'name' => 'datatables7',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r','s','t','u'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21']
-            ]
-        ];
+        $payment = $this->Client()->getPaymentSummary();
         
         return new ViewModel(['result' => $payment]);
     }
@@ -72,17 +62,7 @@ class FinanceReportController extends AbstractActionController
     
     public function tellerTransactionAction()
     {
-        $transaction = [
-            'title' => strtoupper('clients in arrears'),
-            'name' => 'datatables2',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13']
-            ]
-        ];
+        $transaction = $this->Teller()->getAllTransactions();
         
         return new ViewModel(['result' => $transaction]);
     }

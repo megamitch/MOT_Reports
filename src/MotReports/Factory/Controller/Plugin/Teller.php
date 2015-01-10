@@ -24,19 +24,21 @@
  * THE SOFTWARE.
  */
 
-namespace MotReports\View\Helper\CreditOfficer;
+namespace MotReports\Factory\Controller\Plugin;
 
-use Zend\View\Helper\AbstractHelper;
+use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\ServiceManager\FactoryInterface;
+use MotReports\Controller\Plugin\Teller as TellerControllerPlugin;
 
 /**
- * MotReports\View\Helper\CreditOfficer\Status
+ * MotReports\Factory\Controller\Plugin\Teller
  * 
- * @package MotReports\View\Helper\CreditOfficer
+ * @package MotReports\Factory\Controller\Plugin
  */
-class Status extends AbstractHelper
+class Teller implements FactoryInterface
 {
-    public function __invoke()
+    public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        return "";
+        return new TellerControllerPlugin();
     }
 }
