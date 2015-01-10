@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2012-2015, contributors of Mega Mitch Credit, Inc. software project.
+ * Copyright (c) 2012-2014, contributors of Mega Mitch Credit, Inc. software project.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,19 +24,18 @@
  * THE SOFTWARE.
  */
 
-namespace MotReports\View\Helper\CreditOfficer;
-
-use Zend\View\Helper\AbstractHelper;
-
-/**
- * MotReports\View\Helper\CreditOfficer\Status
- * 
- * @package MotReports\View\Helper\CreditOfficer
- */
-class Status extends AbstractHelper
-{
-    public function __invoke()
-    {
-        return "";
-    }
-}
+return [
+    'abstract_factories' => [
+        
+    ],
+    'factories' => [
+        'CreditOfficer' => 'MotReports\Factory\Controller\Plugin\CreditOfficer'
+    ],
+    'invokables' => [
+        
+    ],
+    'alias' => [
+        
+    ]
+    
+];
