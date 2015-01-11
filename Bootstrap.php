@@ -31,9 +31,9 @@
  */
 
 // uses Composer autoloading
-if (file_exists(__DIR__ . '/vendor/autoload.php')) {
-    $composer = include __DIR__ . '/vendor/autoload.php';
-    $composer->add('MotReports', include __DIR__ . '/autoload_register.php');
-} else {
-    throw new RuntimeException('Unable to load MotAdmin module. Run `composer install` to install dependencies');
+if (!file_exists(__DIR__ . '/vendor/autoload.php')) {
+    throw new RuntimeException('Unable to load MotReports module. Run `composer install` to install dependencies');  
 }
+
+$composer = include __DIR__ . '/vendor/autoload.php';
+$composer->add('MotReports', include __DIR__ . '/autoload_register.php');

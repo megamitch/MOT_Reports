@@ -24,55 +24,25 @@
  * THE SOFTWARE.
  */
 
-namespace MotReports\Controller;
+namespace MotReports\Factory\Controller\Plugin;
 
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\ServiceManager\FactoryInterface;
+use MotReports\Controller\Plugin\Aging as AgingControllerPlugin;
+//use MotReports\Service\Aging as AgingService;
+use MotReports\Service\Arrears as ArrearsService;
 
 /**
- * MotReports\Controller\ManagementReportController
- * 
- * @package MotReports\Controller
+ * MotReports\Factory\Controller\Plugin\Aging
+ *
+ * @package MotReports\Factory\Controller\Plugin
  */
-class ManagementReportController extends AbstractActionController
+class Aging implements FactoryInterface
 {
-    public function mambuCommentsAction()
+    public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $totalDue = [
-            'name' => 'datatables5',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7'],
-                ['1','2', '3', '4', '5', '6', '7'],
-                ['1','2', '3', '4', '5', '6', '7']
-            ]
-        ];
+        $arrears = new ArrearsService();
         
-        return new ViewModel(['result' => $totalDue]);
-    }
-    
-    public function paymentTransactionAction()
-    {
-        
-    }
-    
-    public function employeePersonalLoanAction()
-    {
-        
-    }
-    
-    public function fraudulentAccountAction()
-    {
-        
-    }
-    
-    public function employeeAsGuarantorAction()
-    {
-        
-    }
-    
-    public function companyKpiAction()
-    {
-        
+        return new AgingControllerPlugin($arrears);
     }
 }
