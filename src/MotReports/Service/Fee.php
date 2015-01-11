@@ -24,55 +24,14 @@
  * THE SOFTWARE.
  */
 
-namespace MotReports\Controller;
-
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+namespace MotReports\Service;
 
 /**
- * MotReports\Controller\ManagementReportController
- * 
- * @package MotReports\Controller
+ * MotReports\Service\Fee
+ *
+ * @package MotReports\Service
  */
-class ManagementReportController extends AbstractActionController
+class Fee
 {
-    public function mambuCommentsAction()
-    {
-        $totalDue = [
-            'name' => 'datatables5',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7'],
-                ['1','2', '3', '4', '5', '6', '7'],
-                ['1','2', '3', '4', '5', '6', '7']
-            ]
-        ];
-        
-        return new ViewModel(['result' => $totalDue]);
-    }
     
-    public function paymentTransactionAction()
-    {
-        
-    }
-    
-    public function employeePersonalLoanAction()
-    {
-        
-    }
-    
-    public function fraudulentAccountAction()
-    {
-        
-    }
-    
-    public function employeeAsGuarantorAction()
-    {
-        
-    }
-    
-    public function companyKpiAction()
-    {
-        
-    }
 }

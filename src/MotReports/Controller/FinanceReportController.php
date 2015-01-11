@@ -1,9 +1,27 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * The MIT License
+ *
+ * Copyright (c) 2012-2015, contributors of Mega Mitch Credit, Inc. software project.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
 
 namespace MotReports\Controller;
@@ -27,35 +45,7 @@ class FinanceReportController extends AbstractActionController
     
     public function appliedFeeAction()
     {
-        $fee = [
-            'title' => strtoupper('clients in grace period'),
-            'name' => 'datatables1',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0']
-            ]
-        ];
+        $fee = $this->Fee()->getAppliedFee();
         
         return new ViewModel(['result' => $fee]);
     }
@@ -69,73 +59,20 @@ class FinanceReportController extends AbstractActionController
     
     public function agingAnalysisAction()
     {
-        $transaction = [
-            'title' => strtoupper('clients in arrears'),
-            'name' => 'datatables8',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r','s','t','u','v','w','x','y','z'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26']
-            ]
-        ];
+        $transaction = $this->Aging()->getCurrentAnalysis();
         
         return new ViewModel(['result' => $transaction]);
     }
     
     public function agingAnalysisByArrearsAction()
     {
-        $thirty = [
-            'title' => strtoupper('clients in arrears'),
-            'name' => 'datatables9',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'],
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r','s','t','u','v','w','x','y','z','aa','ab','ac','ad'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30']
-            ]
-        ];
+        $thirty = $this->Aging()->getArrearsLessThan(30);
         
-        $sixty = [
-            'title' => strtoupper('clients in arrears'),
-            'name' => 'datatables9-2',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'],
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r','s','t','u','v','w','x','y','z','aa','ab','ac','ad'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30']
-            ]
-        ];
+        $sixty = $this->Aging()->getArrearsBetween(31, 60);
         
-        $ninety = [
-            'title' => strtoupper('clients in arrears'),
-            'name' => 'datatables9-3',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'],
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r','s','t','u','v','w','x','y','z','aa','ab','ac','ad'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30']
-            ]
-        ];
+        $ninety = $this->Aging()->getArrearsBetween(61, 90);
         
-        $overninety = [
-            'title' => strtoupper('clients in arrears'),
-            'name' => 'datatables10',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r','s','t','u','v','w','x','y'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25'],
-                ['1','2', '3', '4', '5', '6', '7', '8','9','0', '11', '12','13','14','15','16','17','18','19','20','21','22','23','24','25']
-            ]
-        ];
+        $overninety = $this->Aging()->getArrearsOverThan(90);
         
         return new ViewModel(['result' => [$thirty, $sixty, $ninety, $overninety]]); 
     }

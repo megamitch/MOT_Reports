@@ -32,6 +32,8 @@ return [
         'CreditOfficer' => 'MotReports\Factory\Controller\Plugin\CreditOfficer',
         'Client' => 'MotReports\Factory\Controller\Plugin\Client',
         'Teller' => 'MotReports\Factory\Controller\Plugin\Teller',
+        'Fee' => 'MotReports\Factory\Controller\Plugin\Fee',
+        'Aging' => 'MotReports\Factory\Controller\Plugin\Aging',
     ],
     'invokables' => [
         

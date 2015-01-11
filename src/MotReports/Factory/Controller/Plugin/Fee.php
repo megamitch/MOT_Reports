@@ -24,55 +24,21 @@
  * THE SOFTWARE.
  */
 
-namespace MotReports\Controller;
+namespace MotReports\Factory\Controller\Plugin;
 
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
+use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\ServiceManager\FactoryInterface;
+use MotReports\Controller\Plugin\Fee as FeeControllerPlugin;
 
 /**
- * MotReports\Controller\ManagementReportController
- * 
- * @package MotReports\Controller
+ * MotReports\Factory\Controller\Plugin\Fee
+ *
+ * @package MotReports\Factory\Controller\Plugin
  */
-class ManagementReportController extends AbstractActionController
+class Fee implements FactoryInterface
 {
-    public function mambuCommentsAction()
+    public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $totalDue = [
-            'name' => 'datatables5',
-            'header' => ['a','b', 'c', 'd', 'e', 'f', 'g'],
-            'data'  => [
-                ['1','2', '3', '4', '5', '6', '7'],
-                ['1','2', '3', '4', '5', '6', '7'],
-                ['1','2', '3', '4', '5', '6', '7']
-            ]
-        ];
-        
-        return new ViewModel(['result' => $totalDue]);
-    }
-    
-    public function paymentTransactionAction()
-    {
-        
-    }
-    
-    public function employeePersonalLoanAction()
-    {
-        
-    }
-    
-    public function fraudulentAccountAction()
-    {
-        
-    }
-    
-    public function employeeAsGuarantorAction()
-    {
-        
-    }
-    
-    public function companyKpiAction()
-    {
-        
+        return new FeeControllerPlugin();
     }
 }
