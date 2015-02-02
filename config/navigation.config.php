@@ -26,11 +26,10 @@
 
 return [
     'navigation' => [
-        'default' => [
-            
-        ],
+        'default' => [],
         'sidebar' => [
-            "reporting" => [
+            "dashboard" => [], //DO NOT CHANGE THE SEQUENCE
+            "mot-reports" => [
                 "label" => "View Reporting",
                 "route" =>  "#",
                 "icon" => "fa fa-line-chart",
@@ -114,7 +113,8 @@ return [
                         'icon' => "fa fa-line-chart"
                     ],
                 ]
-            ]
+            ],
+            'mot-users' => []
         ],
 //        "header" => [
 //            "reporting" => [
