@@ -26,8 +26,6 @@
 
 namespace MotReports;
 
-use Zend\Mvc\ModuleRouteListener;
-use Zend\Mvc\MvcEvent;
 use Zend\ModuleManager\Feature\ViewHelperProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ControllerProviderInterface;
@@ -43,13 +41,6 @@ class Module implements
     ControllerPluginProviderInterface,
     ViewHelperProviderInterface
 {
-    public function onBootstrap(MvcEvent $event)
-    {
-        $eventManager        = $event->getApplication()->getEventManager();
-        $moduleRouteListener = new ModuleRouteListener();
-        $moduleRouteListener->attach($eventManager);
-    }
-
     public function getConfig()
     {
         $config      = [];
