@@ -4,17 +4,19 @@
     "license": "MIT",
     "type": "application",
     "keywords": [
-        "megamitch",
-        "office tools",
-        "reports",
-        "zf2"
+        "reporting tool"
     ],
-    "homepage": "http://megamitch.ph/mot",
     "authors": [
         {
             "name": "Gab Amba",
             "email": "gamba@gabbydgab.com",
-            "homepage": "http://www.gabbydgab.com/"            
+            "homepage": "http://www.gabbydgab.com/",
+            "role": "Development Lead"
+        },
+        {
+            "name": "Jermain Obial",
+            "email": "jerm.obial@megamitch.com",
+            "role": "Product Development Manager"
         }
     ],
     "autoload": {
@@ -27,7 +29,8 @@
         "php": ">=5.4"
     },
     "require-dev": {        
-        "phpunit/phpunit": "4.*",
-        "phpunit/php-invoker": "1.*"
+        "phpunit/phpunit": "~4.5",
+        "phpunit/php-invoker": "~1.1",
+        "zendframework/zendframework": "~2.3"
     }
 }
