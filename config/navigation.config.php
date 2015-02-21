@@ -82,16 +82,24 @@ return [
                         'icon' => "fa fa-line-chart"
                     ],
                     //MANAGEMENT
-                    "mambu-comments" => [
-                        'label' => "Mambu Comments",
-                        'route' => "mot/reports/mambu-comments",
-                        'icon' => "fa fa-line-chart"
-                    ],
-                    "payment-transaction" => [
-                        'label' => "Payment Transactions",
-                        'route' => "mot/reports/payment-transaction",
-                        'icon' => "fa fa-line-chart"
-                    ],
+//                    "mambu-comments" => [
+//                        'label' => "Mambu Comments",
+//                        'route' => "mot/reports/mambu-comments",
+//                        'icon' => "fa fa-line-chart"
+//                    ],
+//                    "payment-transaction" => [
+//                        'label' => "Payment Transactions",
+//                        'route' => "mot/reports/payment-transaction",
+//                        'icon' => "fa fa-line-chart"
+//                    ],
+//                    "company-kpi" => [
+//                        'label' => "Business/Company KPI",
+//                        'route' => "mot/reports/company-kpi",
+//                        'icon' => "fa fa-line-chart"
+//                    ],
+                    /**
+                    * @deprecated since version 2.0
+                    */
 //                    "employee-personal-loan" => [
 //                        'label' => "Employee Personal Loan",
 //                        'route' => "mot/reports/employee-personal-loan",
@@ -106,15 +114,9 @@ return [
 //                        'label' => "Employee as Guarantor",
 //                        'route' => "mot/reports/employee-as-guarantor",
 //                        'icon' => "fa fa-line-chart"
-//                    ],
-                    "company-kpi" => [
-                        'label' => "Business/Company KPI",
-                        'route' => "mot/reports/company-kpi",
-                        'icon' => "fa fa-line-chart"
-                    ],
+//                    ]
                 ]
             ],
-            'mot-users' => []
         ],
 //        "header" => [
 //            "reporting" => [
