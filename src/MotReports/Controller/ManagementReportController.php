@@ -56,22 +56,31 @@ class ManagementReportController extends AbstractActionController
         
     }
     
+    public function companyKpiAction()
+    {
+        
+    }
+    
+    /**
+     * @deprecated since version 2.0
+     */
     public function employeePersonalLoanAction()
     {
         
     }
     
+    /**
+     * @deprecated since version 2.0
+     */
     public function fraudulentAccountAction()
     {
         
     }
     
+    /**
+     * @deprecated since version 2.0
+     */
     public function employeeAsGuarantorAction()
-    {
-        
-    }
-    
-    public function companyKpiAction()
     {
         
     }

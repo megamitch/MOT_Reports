@@ -1,23 +1,48 @@
 <div class="pageheader">
-     <div class="media">
-         <div class="pageicon pull-left">
-             <i class="fa fa-line-chart"></i>
-         </div>
-         <div class="media-body" style="padding-left: 5px">
-             <ul class="breadcrumb">
-                 <li>
-                     <a href="<?php echo $this->url('mot');?>"><i class="glyphicon glyphicon-home"></i></a>
-                 </li>
-                 <li> <a href="#">Reports</a> </li>
-                 <li> <a href="#">Credit Officer</a> </li>
-                 <li>Sales KPI</li>
-             </ul>
-             <h4>Credit Officer Sales KPI</h4>
-         </div>
-     </div>
+    <div class="col-md-5 pull-left">
+        <div class="media">
+            <div class="pageicon pull-left">
+                <i class="fa fa-line-chart"></i>
+            </div>
+            <div class="media-body" style="padding-left: 5px">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="<?php echo $this->url('mot');?>">
+                            <i class="glyphicon glyphicon-home"></i>
+                        </a>
+                    </li>
+                    <li> <a href="#">Reports</a> </li>
+                    <li> <a href="#">Credit Officer</a> </li>
+                    <li>Sales KPI</li>
+                </ul>
+                <h4>Credit Officer Sales KPI</h4>
+            </div>
+        </div>
+    </div>
+    <!-- credit officer listing view helper-->
+    <div class="col-md-7 pull-right">
+        <form role="form" class="form-inline pull-right">
+            <div class="form-group">
+                <select class="form-control tooltips" 
+                        data-placement="top" 
+                        title="Select Branch">
+                    <option>ALL</option>
+                    <option>Iligan</option>
+                    <option>Initao</option>
+                    <option>Lugait</option>
+                </select>
+            </div>                
+            <div class="form-group">                    
+                <select class="form-control tooltips" data-placement="top" title="Select Credit Officer">
+                    <option>ALL</option>
+                    <option>Mae Shiel Dio</option>
+                </select>
+            </div>
+        </form>
+    </div>
 </div>
 <div class="contentpanel">
-    <div class="row">
+    <div class="row-fluid">
         <?php echo $this->CreditOfficerSalesKPI(); ?>
     </div>
 </div>
